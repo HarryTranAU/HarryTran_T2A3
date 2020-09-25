@@ -1,4 +1,3 @@
-
 import requests
 
 class OZB_Scraper:
