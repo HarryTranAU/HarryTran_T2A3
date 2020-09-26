@@ -1,7 +1,7 @@
-from OZB_Scraper import OZB_Scraper
+from Scraper import Scraper
 from Catalogue import Catalogue
 
-ozb = OZB_Scraper("https://www.ozbargain.com.au/")
+ozb = Scraper("https://www.ozbargain.com.au/")
 
 ozb_catalog = Catalogue()
 ozb_catalog.extractDeals(ozb.scrape())

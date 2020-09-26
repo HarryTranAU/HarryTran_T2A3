@@ -1,7 +1,7 @@
 import requests
 
 
-class OZB_Scraper:
+class Scraper:
     def __init__(self, url):
         self.url = url
 
