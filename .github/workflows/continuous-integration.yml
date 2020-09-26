@@ -40,4 +40,4 @@ jobs:
             git clone https://github.com/HarryTranAU/HarryTran_T2A3.git
             python3.8 -m venv /home/github-actions/HarryTran_T2A3/venv
             source /home/github-actions/HarryTran_T2A3/venv/bin/activate
-            pip install -r /home/github-actions/HarryTran_T2A3/requirements.txt
+            pip3.8 install -r /home/github-actions/HarryTran_T2A3/requirements.txt
