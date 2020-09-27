@@ -11,6 +11,8 @@ class Catalogue:
     def populateCatalogue(self):
         raw_deals = self.soup.find_all(class_="node-ozbdeal")
         for deal in raw_deals:
+            if deal.find(class_="expired"):
+                continue
             title = deal.find(class_="title").a.text
             link = deal.h2.a["href"]
             upvote = deal.find(class_="nvb voteup").text
