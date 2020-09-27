@@ -1,5 +1,4 @@
 import unittest
-from Scraper import Scraper
 
 
 class TestScraper(unittest.TestCase):
