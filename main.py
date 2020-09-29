@@ -1,4 +1,5 @@
 from Ozbargain import Ozbargain
+from Catalogue import Catalogue
 
 main_menu = """
 Welcome! Please input a number option below.
@@ -20,7 +21,10 @@ def display_options():
     options_input = input(options_menu)
     while options_input != "9":
         if options_input == "1":
-            print("threshold option chosen")
+            num = input("Change Threshold to: ")
+            # validate input here
+            Catalogue.set_threshold(int(num))
+            print(f"Upvote threshold has been changed to {num}")
         else:
             print("Type a number, Please try again.")
 
@@ -37,15 +41,4 @@ while user_input != "9":
 
     user_input = input(main_menu)
 
-print("Program Fin.")
-
-# while((user_input := Menu.menu_options()) != "9"):
-#     if user_input == "1":
-#         Menu.frontpage()
-
-#     if user_input not in ["1", "9"]:
-#         print("Please type the number for your menu choice...")
-
-#     input("Press 'Enter' to go back to menu...")
-
-# print("Bye!")
+print("Fin.")

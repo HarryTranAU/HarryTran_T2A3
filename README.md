@@ -2,6 +2,8 @@
 
 ## Project Summary
 
+## Screenshots
+
 ## Links
 
 ## Installation Guide
