@@ -6,11 +6,25 @@
 
 ## Links
 
+### Github
+
+### Trello
+
 ## Installation Guide
+
+## How to get your Discord Webhook
 
 ## Flowchart
 
 ## Version History
+
+### Version 0.6: Remembering deals sent to Discord (Prevent Duplicates)
+
+Version goal: remembering which deals have been sent to discord to only send new deals.
+
+To be implemented:
+ - deals.JSON to save sent deals
+ - function to find the difference between scraped deals and known deals
 
 ### Version 0.5: Discord Output
 

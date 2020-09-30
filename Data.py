@@ -3,6 +3,7 @@ import json
 
 class Data():
     file_path = "config.json"
+    threshold = 0
 
     @classmethod
     def save(cls, data):

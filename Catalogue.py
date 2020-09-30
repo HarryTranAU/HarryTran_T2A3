@@ -4,21 +4,16 @@ from Deal import Deal
 
 class Catalogue:
     deals = []
-    threshold = 100
 
     def extractDeals(self, page):
         self.soup = BeautifulSoup(page, 'lxml')
 
-    @classmethod
-    def set_threshold(cls, number):
-        cls.threshold = number
-
-    def populateCatalogue(self):
+    def populateCatalogue(self, threshold):
         raw_deals = self.soup.find_all(class_="node-ozbdeal")
         for deal in raw_deals:
             if deal.find(class_="expired"):
                 continue
-            elif int(deal.find(class_="nvb voteup").text) < self.threshold:
+            elif int(deal.find(class_="nvb voteup").text) < threshold:
                 continue
             title = deal.find(class_="title").a.text
             link = deal.h2.a["href"]

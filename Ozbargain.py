@@ -11,10 +11,10 @@ class Ozbargain:
         return cls.source
 
     @staticmethod
-    def frontpage():
+    def frontpage(threshold):
         ozb_catalog = Catalogue()
         ozb_catalog.extractDeals(Ozbargain.scrape())
-        ozb_catalog.populateCatalogue()
+        ozb_catalog.populateCatalogue(threshold)
         print("\n\n")
         if len(ozb_catalog.deals) == 0:
             print("No Deals meet the threshold. "
