@@ -15,6 +15,10 @@ class Ozbargain:
         ozb_catalog = Catalogue()
         ozb_catalog.extractDeals(Ozbargain.scrape())
         ozb_catalog.populateCatalogue()
+        print("\n\n")
+        if len(ozb_catalog.deals) == 0:
+            print("No Deals meet the threshold. "
+                  "Please lower the Upvote threshold in Options")
         for deal in ozb_catalog.deals:
             deal.printDeal()
-            print("**********")
+            print("*************************\n")
