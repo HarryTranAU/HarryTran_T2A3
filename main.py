@@ -33,7 +33,7 @@ def display_options():
 
     while options_input != "9":
         if options_input == "1":
-            print(f"\nCurrent Upvote threshold is {Catalogue.threshold}. "
+            print(f"\nCurrent Upvote threshold is {Data.threshold}. "
                   "(Default=0)")
             num = input("Change Upvote Threshold to: ")
             try:
