@@ -12,6 +12,15 @@
 
 ## Version History
 
+### Version 0.5: Discord Output
+
+Version goal: Output Deals to a discord server
+
+To be implemented:
+ - Discord webhook
+ - Saving discord url
+ - Discord message formatting/embed
+
 ### Version 0.4: User Options
 
 Version goal: Allow user to set upvote threshold.

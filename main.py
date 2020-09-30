@@ -1,6 +1,7 @@
 from Ozbargain import Ozbargain
 from Catalogue import Catalogue
 from Data import Data
+from Bot import Bot
 
 main_menu = """
 ++++++++++++ Main Menu ++++++++++++
@@ -20,7 +21,7 @@ Input: """
 
 load_config = Data.load()
 Catalogue.threshold = load_config["threshold"]
-
+save_config = load_config
 
 print("Welcome!")
 user_input = input(main_menu)
@@ -36,10 +37,18 @@ def display_options():
             try:
                 Catalogue.set_threshold(int(num))
                 print(f"Upvote threshold has been changed to {num}")
+                save_config["threshold"] = num
+                Data.save(save_config)
             except ValueError:
                 print("Enter an Integer. Or reset to default using 0")
         elif options_input == "2":
-            print("option 2 picked")
+            print("Go to README.md for instructions on how to obtain webhook.")
+            user_webhook = input("Please paste your discord webhook below:\n")
+            if Bot.validate_url(user_webhook):
+                Bot.set_url(user_webhook)
+                save_config["discord_hook"] = user_webhook
+                Data.save(save_config)
+
         else:
             print("Type a number, Please try again.")
 
@@ -56,7 +65,4 @@ while user_input != "9":
 
     user_input = input(main_menu)
 
-save_config = {"threshold": Catalogue.threshold}
-Data.save(save_config)
-
-print("Fin.")
+print("\nGoodbye!")

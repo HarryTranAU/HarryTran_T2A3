@@ -17,4 +17,4 @@ class Data():
                 json_string = file_handler.read()
                 return json.loads(json_string)
         except FileNotFoundError:
-            return {"threshold": 0}
+            return {"threshold": 0, "discord_hook": ""}
