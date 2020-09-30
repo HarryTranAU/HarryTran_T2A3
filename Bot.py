@@ -1,14 +1,11 @@
-from dhooks_lite import Webhook
+from dhooks_lite import Webhook, Embed, Field
 import re
-
-# url = "https://discordapp.com/api/webhooks/760471241525690439/"\
-#       "RWdvFBYDYAX07mOsCSaoTV4hu_lC5XqEFhJry4zl1SU1mzeMn0DrG9-U9gL5KOF6WVrx"
 
 # hook = Webhook(url)
 # hook.execute('Hello, World!')
 
 
-class Bot:
+class Bot_discord:
     url = ""
     URL_REGEX = r'^(?:https?://)?((canary|ptb)\.)?discord(?:app)?\.com/api/' \
                 r'webhooks/(?P<id>[0-9]+)/(?P<token>[A-Za-z0-9\.\-\_]+)/?$'
@@ -26,3 +23,22 @@ class Bot:
             return False
         else:
             return True
+
+    @classmethod
+    def send_deals(cls, deals):
+        hook = Webhook(cls.url)
+        for deal in deals:
+            e1 = Embed(
+                title=deal.title,
+                url="https://www.ozbargain.com.au" + deal.link,
+                color=0x5CDBF0,
+                fields=[
+                    Field('Upvote', deal.upvote),
+                    Field('Downvote', deal.downvote)
+                ]
+            )
+            hook.execute(
+                "https://www.ozbargain.com.au" + deal.link,
+                username="Ozbargain",
+                embeds=[e1]
+            )
