@@ -1,5 +1,6 @@
 from Ozbargain import Ozbargain
 from Catalogue import Catalogue
+from Data import Data
 
 main_menu = """
 Welcome! Please input a number option below.
@@ -14,6 +15,9 @@ Please input a number option below.
 9. Back to Main Menu
 Input: """
 
+load_config = Data.load()
+Catalogue.threshold = load_config["threshold"]
+
 user_input = input(main_menu)
 
 
@@ -21,7 +25,8 @@ def display_options():
     options_input = input(options_menu)
     while options_input != "9":
         if options_input == "1":
-            num = input("Change Threshold to: ")
+            print(f"\nCurrent Upvote threshold is {Catalogue.threshold}")
+            num = input("Change Upvote Threshold to: ")
             # validate input here
             Catalogue.set_threshold(int(num))
             print(f"Upvote threshold has been changed to {num}")
@@ -40,5 +45,8 @@ while user_input != "9":
         print("Type a number, Please try again.")
 
     user_input = input(main_menu)
+
+save_config = {"threshold": Catalogue.threshold}
+Data.save(save_config)
 
 print("Fin.")
