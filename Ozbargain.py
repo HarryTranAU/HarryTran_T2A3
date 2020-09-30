@@ -6,12 +6,12 @@ class Ozbargain:
     url = "https://www.ozbargain.com.au/"
 
     @classmethod
-    def scrape(cls):
+    def scrape(cls) -> str:
         cls.source = requests.get(cls.url).text
         return cls.source
 
     @staticmethod
-    def frontpage(threshold):
+    def frontpage(threshold) -> None:
         ozb_catalog = Catalogue()
         ozb_catalog.extractDeals(Ozbargain.scrape())
         ozb_catalog.populateCatalogue(threshold)

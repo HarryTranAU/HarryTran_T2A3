@@ -11,11 +11,11 @@ class Bot_discord:
                 r'webhooks/(?P<id>[0-9]+)/(?P<token>[A-Za-z0-9\.\-\_]+)/?$'
 
     @classmethod
-    def set_url(cls, url):
+    def set_url(cls, url: str) -> None:
         cls.url = url
 
     @classmethod
-    def validate_url(cls, url):
+    def validate_url(cls, url: str) -> None:
         match = re.match(cls.URL_REGEX, url)
         if match is None:
             print("Invalid webhook URL provided. Go to README.md "
@@ -25,7 +25,7 @@ class Bot_discord:
             return True
 
     @classmethod
-    def send_deals(cls, deals):
+    def send_deals(cls, deals: list) -> None:
         hook = Webhook(cls.url)
         for deal in deals:
             e1 = Embed(

@@ -28,7 +28,7 @@ print("Welcome!")
 user_input = input(main_menu)
 
 
-def display_options():
+def display_options() -> None:
     options_input = input(options_menu)
 
     while options_input != "9":
