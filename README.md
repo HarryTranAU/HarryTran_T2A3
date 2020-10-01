@@ -1,4 +1,4 @@
-Harry Tran T2A3
+## **Harry Tran T2A3**
 
 https://github.com/HarryTranAU/HarryTran_T2A3
 
@@ -29,6 +29,17 @@ Ozbargain.com.au is a popular deal site where site members post deals they have 
 
 # Screenshots
 
+**Deal on Ozbargain**
+![Ozbargain Deal](docs/ozbargain_deal_ss.png "Ozbargain Deal")
+
+
+**Terminal Output**
+![Ozbargain Deal: Terminal Output](docs/terminal_deal_ss.png "Ozbargain Deal: Terminal Output")
+
+
+**Discord Output**
+![Ozbargain Deal: Discord Output](docs/discord_deal_ss.png "Ozbargain Deal: Discord Output")
+
 # Installation (Linux)
 
 Install Python and git
@@ -36,7 +47,6 @@ Install Python and git
 sudo apt-get update
 sudo apt-get install git
 sudo apt-get install python3
-
 ```
 
 Git clone and Open Folder
@@ -64,7 +74,8 @@ Program Start
 python main.py
 ```
 
-### How to get your Discord Webhook
+# How to get your Discord Webhook
+
 
 # Flowchart
 
