@@ -1,7 +1,7 @@
 from Ozbargain import Ozbargain
 from Catalogue import Catalogue
 from Data import Data
-from Bot import Bot_discord
+from Bot import BotDiscord
 
 main_menu = """
 ++++++++++++ Main Menu ++++++++++++
@@ -21,7 +21,7 @@ Input: """
 
 load_config = Data.load()
 Data.threshold = load_config["threshold"]
-Bot_discord.url = load_config["discord_hook"]
+BotDiscord.url = load_config["discord_hook"]
 save_config = load_config
 
 print("Welcome!")
@@ -47,8 +47,8 @@ def display_options() -> None:
         elif options_input == "2":
             print("Refer to README.md on how to obtain Discord webhook.")
             user_webhook = input("Please paste your discord webhook below:\n")
-            if Bot_discord.validate_url(user_webhook):
-                Bot_discord.set_url(user_webhook)
+            if BotDiscord.validate_url(user_webhook):
+                BotDiscord.set_url(user_webhook)
                 save_config["discord_hook"] = user_webhook
                 Data.save(save_config)
                 print("Discord webhook saved successfully!")
@@ -64,10 +64,10 @@ while user_input != "9":
         Ozbargain.frontpage(Data.threshold)
         to_discord = input("Would you like to send this to discord? (yes/no)")
         if to_discord == "yes":
-            if Bot_discord.url == "":
+            if BotDiscord.url == "":
                 print("Please setup Discord webhooks in Options first.")
             else:
-                Bot_discord.send_deals(Catalogue.deals)
+                BotDiscord.send_deals(Catalogue.deals)
 
     elif user_input == "8":
         display_options()

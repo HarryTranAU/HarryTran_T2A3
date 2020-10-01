@@ -5,7 +5,7 @@ import re
 # hook.execute('Hello, World!')
 
 
-class Bot_discord:
+class BotDiscord:
     url = ""
     URL_REGEX = r'^(?:https?://)?((canary|ptb)\.)?discord(?:app)?\.com/api/' \
                 r'webhooks/(?P<id>[0-9]+)/(?P<token>[A-Za-z0-9\.\-\_]+)/?$'

@@ -10,7 +10,7 @@ class Deal:
         self.upvote = upvote
         self.downvote = downvote
 
-    def printDeal(self) -> None:
+    def print_deal(self) -> None:
         print("Deal: " + self.title)
         print("Link: " + "https://www.ozbargain.com.au" + self.link)
         print("upvote: " + self.upvote)

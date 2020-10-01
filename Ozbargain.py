@@ -13,12 +13,12 @@ class Ozbargain:
     @staticmethod
     def frontpage(threshold) -> None:
         ozb_catalog = Catalogue()
-        ozb_catalog.extractDeals(Ozbargain.scrape())
-        ozb_catalog.populateCatalogue(threshold)
+        ozb_catalog.extract_deals(Ozbargain.scrape())
+        ozb_catalog.populate_catalogue(threshold)
         print("\n\n")
         if len(ozb_catalog.deals) == 0:
             print("No Deals meet the threshold. "
                   "Please lower the Upvote threshold in Options")
         for deal in ozb_catalog.deals:
-            deal.printDeal()
+            deal.print_deal()
             print("*************************\n")

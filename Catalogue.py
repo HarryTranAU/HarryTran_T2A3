@@ -5,10 +5,10 @@ from Deal import Deal
 class Catalogue:
     deals = []
 
-    def extractDeals(self, page: str) -> None:
+    def extract_deals(self, page: str) -> None:
         self.soup = BeautifulSoup(page, 'lxml')
 
-    def populateCatalogue(self, threshold: int) -> None:
+    def populate_catalogue(self, threshold: int) -> None:
         raw_deals = self.soup.find_all(class_="node-ozbdeal")
         for deal in raw_deals:
             if deal.find(class_="expired"):

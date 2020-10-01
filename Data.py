@@ -1,7 +1,7 @@
 import json
 
 
-class Data():
+class Data:
     file_path = "config.json"
     threshold = 0
 
