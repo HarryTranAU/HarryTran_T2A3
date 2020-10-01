@@ -1,14 +1,14 @@
 ## **Harry Tran T2A3**
 
-https://github.com/HarryTranAU/HarryTran_T2A3
+[Github Repo](https://github.com/HarryTranAU/HarryTran_T2A3)
 
-https://trello.com/b/b249dqpt/api-ci-cd-terminal-app
+[Trello Project Management](https://trello.com/b/b249dqpt/api-ci-cd-terminal-app)
 
 ![Ozbargain to Discord](docs/summary.png "Ozbargain to Discord")
 
 # Summary
 
-[Ozbargain](https://www.ozbargain.com.au/) is a popular deal site where site members post deals they have come across. This program will scrape the frontpage for active deals (not out of stock or expired) and print it to the terminal. Optional: the output can also be sent to a Discord Server via Discord Webhook.
+[Ozbargain](https://www.ozbargain.com.au/) is a popular deal site where site members post deals they have come across. This program will scrape the frontpage for active deals (not "out of stock" or "expired") and print them to the terminal. Optional: the output can also be sent to a Discord Server via Discord Webhook.
 
 # Features
 
@@ -89,9 +89,11 @@ python main.py
 
 # Flowchart
 
+
+
 # Version History
 
-### `NEXT: Remembering deals sent to Discord (Prevent Duplicates)`
+### `NEXT IDEA: Remembering deals sent to Discord (Prevent Duplicates)`
 
 Version goal: remembering which deals have been sent to discord to only send new deals.
 
