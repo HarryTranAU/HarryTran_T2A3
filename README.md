@@ -89,11 +89,11 @@ python main.py
 
 # Flowchart
 
-
+![Flowchart](docs/flowchart.png "Flowchart")
 
 # Version History
 
-### `NEXT IDEA: Remembering deals sent to Discord (Prevent Duplicates)`
+### `NEXT UPDATE: Remembering deals sent to Discord (Prevent Duplicates)`
 
 Version goal: remembering which deals have been sent to discord to only send new deals.
 
