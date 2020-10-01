@@ -45,7 +45,7 @@ def display_options() -> None:
                 print("Enter an Integer. Or reset to default using 0")
 
         elif options_input == "2":
-            print("Go to README.md for instructions on how to obtain webhook.")
+            print("Refer to README.md on how to obtain Discord webhook.")
             user_webhook = input("Please paste your discord webhook below:\n")
             if Bot_discord.validate_url(user_webhook):
                 Bot_discord.set_url(user_webhook)
