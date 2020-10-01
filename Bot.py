@@ -1,11 +1,13 @@
 from dhooks_lite import Webhook, Embed, Field
 import re
 
-# hook = Webhook(url)
-# hook.execute('Hello, World!')
-
 
 class BotDiscord:
+    """
+    A class used to encapsulate the interactions and functions related
+    to a Discord Webhook
+    """
+
     url = ""
     URL_REGEX = r'^(?:https?://)?((canary|ptb)\.)?discord(?:app)?\.com/api/' \
                 r'webhooks/(?P<id>[0-9]+)/(?P<token>[A-Za-z0-9\.\-\_]+)/?$'

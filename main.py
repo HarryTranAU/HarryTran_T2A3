@@ -29,6 +29,7 @@ user_input = input(main_menu)
 
 
 def display_options() -> None:
+    """ A function containing the Options Sub-menu """
     options_input = input(options_menu)
 
     while options_input != "9":
