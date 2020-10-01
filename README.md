@@ -8,7 +8,7 @@
 
 # Summary
 
-[Ozbargain](https://www.ozbargain.com.au/) is a popular deal site where site members post deals they have come across. This program will scrape the frontpage for active deals (not "out of stock" or "expired") and print them to the terminal. Optional: the output can also be sent to a Discord Server via Discord Webhook.
+[Ozbargain](https://www.ozbargain.com.au/) is a popular deal site where site members post deals they have come across. This program will scrape the frontpage using Beautiful Soup for active deals (not "out of stock" or "expired") and print them to the terminal. Optional: the output can also be sent to a Discord Server via Discord Webhook.
 
 # Features
 
@@ -17,17 +17,90 @@
  - Connect discord webhook to program
  - Save/load configurations (webhook and threshold persistent through sessions)
 
-# Tools
+### Input
 
-`Beautiful Soup 4` was used to scrape the frontpage of Ozbargain.
+**`Beautiful Soup`**
 
-`Discord webhooks` was used as an optional output for the program.
+Beautiful Soup is a python library used to pull data out of HTML/XML. Beautiful Soup pairs with a parser like `lxml` to packaged the data nicely in a `BeautifulSoup` object. The `BeautifulSoup` object significantly simplifies the process of finding strings and tags in the HTML document using methods such as `find()` and `find_all()`
+
+**`Terminal: User Input`**
+
+The program will take input from the user to determine an upvote threshold (default=0) and the discord webhook. Menu navigation will also require user input.
+
+### Output
+
+**`Discord webhooks`**
+
+Discord's builtin Webhooks function as an easy way to get automated messages and data updates sent to a text channel in a server. The program will interact with the webhook through the `dhooks-lite` python module.
+
+`Terminal: Output`
+
+The program will output the deals to the terminal. An example is shown in the screenshots section.
 
 ### CI/CD
 
 `Github Actions` was used to automate the workflow.
 
 `AWS EC2` was used for deployment
+
+# Dependencies
+
+**Requests**
+
+Requests used to retrieve the text from the website.
+
+```
+certifi==2020.6.20
+chardet==3.0.4
+idna==2.10
+requests==2.24.0pip
+urllib3==1.25.10
+```
+
+**Beautiful Soup and lxml**
+
+Beautiful Soup and lxml used to parse and extract data from the retrieved website.
+
+```
+beautifulsoup4==4.9.1
+soupsieve==2.0.1
+lxml==4.5.2
+```
+
+**JSON**
+
+JSON module used for saving and loading data.
+
+**RE**
+
+Regex used to validate the webhook url
+
+**dhooks-lite**
+
+Dhooks-lite used to interact with Discord webhook
+
+```
+dhooks-lite==0.5.0
+```
+
+**flake8**
+
+Flake8 used to conform with style guide.
+
+```
+flake8==3.8.3
+mccabe==0.6.1
+pycodestyle==2.6.0
+pyflakes==2.2.0
+```
+
+# Structure
+
+
+
+# Flowchart
+
+![Flowchart](docs/flowchart.png "Flowchart")
 
 # Screenshots
 
@@ -60,7 +133,7 @@ git clone https://github.com/HarryTranAU/HarryTran_T2A3.git
 cd HarryTran_T2A3
 ```
 
-Optional Virtual Environment (Recommended)
+Optional: Virtual Environment (Recommended)
 
 ```
 sudo apt-get install python3-venv
@@ -87,15 +160,13 @@ python main.py
 
 [3. Creating a Webhook on your Server](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks#:~:text=Choose%20the%20repository%20that%20you,the%20%22Payload%20URL%22%20blank.)
 
-# Flowchart
-
-![Flowchart](docs/flowchart.png "Flowchart")
+Note: the webhook should be in the form of `https://discord.com/api/webhooks/{id}/{token}`
 
 # Version History
 
-### `NEXT UPDATE: Remembering deals sent to Discord (Prevent Duplicates)`
+### `NEXT UPDATE: Saving deals sent to Discord (Prevent Duplicates)`
 
-Version goal: remembering which deals have been sent to discord to only send new deals.
+Version goal: remembering which deals have been sent to discord to only send new deals when the program has run.
 
 To be implemented:
  - deals.JSON to save sent deals
