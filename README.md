@@ -4,9 +4,11 @@ https://github.com/HarryTranAU/HarryTran_T2A3
 
 https://trello.com/b/b249dqpt/api-ci-cd-terminal-app
 
+![Ozbargain to Discord](docs/summary.png "Ozbargain to Discord")
+
 # Summary
 
-Ozbargain.com.au is a popular deal site where site members post deals they have come across. This program will scrape the frontpage for active deals (not out of stock or expired) and print it to the terminal. Optional: the output can also be sent to a discord channel via discord webhook.
+[Ozbargain](https://www.ozbargain.com.au/) is a popular deal site where site members post deals they have come across. This program will scrape the frontpage for active deals (not out of stock or expired) and print it to the terminal. Optional: the output can also be sent to a Discord Server via Discord Webhook.
 
 # Features
 
@@ -30,14 +32,17 @@ Ozbargain.com.au is a popular deal site where site members post deals they have 
 # Screenshots
 
 **Deal on Ozbargain**
+
 ![Ozbargain Deal](docs/ozbargain_deal_ss.png "Ozbargain Deal")
 
 
 **Terminal Output**
+
 ![Ozbargain Deal: Terminal Output](docs/terminal_deal_ss.png "Ozbargain Deal: Terminal Output")
 
 
 **Discord Output**
+
 ![Ozbargain Deal: Discord Output](docs/discord_deal_ss.png "Ozbargain Deal: Discord Output")
 
 # Installation (Linux)
@@ -74,8 +79,13 @@ Program Start
 python main.py
 ```
 
-# How to get your Discord Webhook
+# Discord/Webhook Guide
 
+[1. Discord Download](https://discord.com/download)
+
+[2. How to create a Discord Server (howtogeek.com)](https://www.howtogeek.com/318890/how-to-set-up-your-own-discord-chat-server/#:~:text=To%20create%20your%20own%20server,a%20Server%E2%80%9D%20on%20the%20left.)
+
+[3. Creating a Webhook on your Server](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks#:~:text=Choose%20the%20repository%20that%20you,the%20%22Payload%20URL%22%20blank.)
 
 # Flowchart
 
