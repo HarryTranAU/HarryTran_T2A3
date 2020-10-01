@@ -21,7 +21,7 @@
 
 **`Beautiful Soup`**
 
-Beautiful Soup is a python library used to pull data out of HTML/XML. Beautiful Soup pairs with a parser like `lxml` to packaged the data nicely in a `BeautifulSoup` object. The `BeautifulSoup` object significantly simplifies the process of finding strings and tags in the HTML document using methods such as `find()` and `find_all()`
+Beautiful Soup is a python library used to pull data out of HTML/XML. Beautiful Soup pairs with a parser like `lxml` to packaged the data nicely in a `BeautifulSoup` object. The `BeautifulSoup` object significantly simplifies the process of finding strings and tags in the HTML document using methods such as `find()` and `find_all()`.
 
 **`Terminal: User Input`**
 
@@ -96,7 +96,25 @@ pyflakes==2.2.0
 
 # Structure
 
+**Deal**
 
+The Deal class contains the `title`, `link`, `upvote`, and `downvote` of each deal shown on the website.
+
+**Catalogue**
+
+The Catalogue class contains a list of deals and methods used to `extract_deals` from the html text, and `populate_catalogue`.
+
+**Ozbargain**
+
+The Ozbargain class is used to group scraping functions for the website `https://www.ozbargain.com.au/`.
+
+**Data**
+
+The Data class is used to group functions for saving and loading data from save files.
+
+**Bot**
+
+The Bot class is used to group functions for interaction with Discord webhooks.
 
 # Flowchart
 
