@@ -21,7 +21,6 @@ class Ozbargain:
         if ozb_response.status_code == 200:
             ozb_catalog.extract_deals(Ozbargain.scrape().text)
             current_deals = ozb_catalog.populate_catalogue(threshold)
-            print("\n\n")
             if len(current_deals) == 0:
                 print("No Deals meet the threshold. "
                       "Please lower the Upvote threshold in Options")

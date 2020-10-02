@@ -15,7 +15,7 @@ class Catalogue:
         """ Fills a list where each element is a Deal(class) """
         raw_deals = self.soup.find_all(class_="node-ozbdeal")
         self.deals = []
-        print(threshold)
+        print(f"\nUpvote Threshold: {threshold}\n")
         for deal in raw_deals:
             if deal.find(class_="expired"):
                 continue
