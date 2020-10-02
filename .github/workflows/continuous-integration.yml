@@ -30,23 +30,23 @@ jobs:
         run: |
           cd src
           flake8 . tests/
-  # deployment:
-  #   needs: test_suite
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Fresh clone & repo install
-  #       uses: appleboy/ssh-action@master
-  #       with:
-  #         #IP address of EC2 instance
-  #         host: 34.194.55.104
-  #         #User you created on the EC2 instance
-  #         username: github-actions
-  #         #Name of the secrets variable where you put your secret key
-  #         key: ${{ secrets.SSH_KEY }}
-  #         port: 22
-  #         script: |
-  #           rm -rf HarryTran_T2A3
-  #           git clone https://github.com/HarryTranAU/HarryTran_T2A3.git
-  #           python3.8 -m venv /home/github-actions/HarryTran_T2A3/venv
-  #           source /home/github-actions/HarryTran_T2A3/venv/bin/activate
-  #           pip3 install -r /home/github-actions/HarryTran_T2A3/requirements.txt
+  deployment:
+    needs: test_suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fresh clone & repo install
+        uses: appleboy/ssh-action@master
+        with:
+          #IP address of EC2 instance
+          host: 34.194.55.104
+          #User you created on the EC2 instance
+          username: github-actions
+          #Name of the secrets variable where you put your secret key
+          key: ${{ secrets.SSH_KEY }}
+          port: 22
+          script: |
+            rm -rf HarryTran_T2A3
+            git clone https://github.com/HarryTranAU/HarryTran_T2A3.git
+            python3.8 -m venv /home/github-actions/HarryTran_T2A3/venv
+            source /home/github-actions/HarryTran_T2A3/venv/bin/activate
+            pip3 install -r /home/github-actions/HarryTran_T2A3/requirements.txt
