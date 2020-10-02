@@ -26,6 +26,10 @@ jobs:
         run: |
           cd src
           mypy . tests/
+      - name: Style Check
+        run: |
+          cd src
+          flake8 . tests/
   # deployment:
   #   needs: test_suite
   #   runs-on: ubuntu-latest
