@@ -19,8 +19,9 @@ Please input a number option below.
 9. Back to Main Menu
 Input: """
 
-load_config = Data.load()
-Data.threshold = load_config["threshold"]
+config_file = Data()
+load_config = config_file.load()
+config_file.threshold = load_config["threshold"]
 BotDiscord.url = load_config["discord_hook"]
 save_config = load_config
 
@@ -34,14 +35,14 @@ def display_options() -> None:
 
     while options_input != "9":
         if options_input == "1":
-            print(f"\nCurrent Upvote threshold is {Data.threshold}. "
+            print(f"\nCurrent Upvote threshold is {config_file.threshold}. "
                   "(Default=0)")
             num = input("Change Upvote Threshold to: ")
             try:
-                Data.threshold = int(num)
+                config_file.threshold = int(num)
                 print(f"Upvote threshold has been changed to {num}")
                 save_config["threshold"] = int(num)
-                Data.save(save_config)
+                config_file.save(save_config)
             except ValueError:
                 print("Enter an Integer. Or reset to default using 0")
 
@@ -51,7 +52,7 @@ def display_options() -> None:
             if BotDiscord.validate_url(user_webhook):
                 BotDiscord.set_url(user_webhook)
                 save_config["discord_hook"] = user_webhook
-                Data.save(save_config)
+                config_file.save(save_config)
                 print("Discord webhook saved successfully!")
 
         else:
@@ -62,7 +63,7 @@ def display_options() -> None:
 
 while user_input != "9":
     if user_input == "1":
-        Ozbargain.frontpage(Data.threshold)
+        Ozbargain.frontpage(config_file.threshold)
         to_discord = input("Would you like to send this to discord? (yes/no)")
         if to_discord == "yes":
             if BotDiscord.url == "":

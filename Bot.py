@@ -46,4 +46,4 @@ class BotDiscord:
                 username="Ozbargain",
                 embeds=[e1]
             )
-            sleep(0.2)
+            sleep(0.2)  # Prevent flooding Discord API with requests
