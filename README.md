@@ -39,9 +39,11 @@ The program will output the deals to the terminal. An example is shown in the sc
 
 ### CI/CD
 
-`Github Actions` was used to automate the workflow.
+**`Github Actions`**
 
-`AWS EC2` was used for deployment
+[Setup Python](https://github.com/marketplace/actions/setup-python)
+
+[]()
 
 # Dependencies
 
@@ -73,15 +75,19 @@ JSON module used for saving and loading data.
 
 **RE**
 
-Regex used to validate the webhook url
+Regex used to validate the webhook url.
 
 **Time**
 
 `Sleep()` function is used to space requests to prevent flooding api with requests too quickly.
 
+**os**
+
+`os` is used for removing a file after test case.
+
 **dhooks-lite**
 
-Dhooks-lite used to interact with Discord webhook
+Dhooks-lite used to interact with Discord webhook.
 
 ```
 dhooks-lite==0.5.0
@@ -96,6 +102,17 @@ flake8==3.8.3
 mccabe==0.6.1
 pycodestyle==2.6.0
 pyflakes==2.2.0
+```
+
+**mypy**
+
+mypy used for type checking.
+
+```
+mypy==0.782
+mypy-extensions==0.4.3
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
 ```
 
 # Structure
