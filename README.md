@@ -37,13 +37,16 @@ Discord's builtin Webhooks function as an easy way to get automated messages and
 
 The program will output the deals to the terminal. An example is shown in the screenshots section.
 
-### CI/CD
+# CI/CD Pipeline
 
 **`Github Actions`**
 
-[Setup Python](https://github.com/marketplace/actions/setup-python)
-
-[]()
+ - [Setup Python (Github Marketplace)](https://github.com/marketplace/actions/setup-python)
+ - Install dependencies
+ - Run Tests (`unittest`)
+ - Check Data Types (`mypy`)
+ - Style Check (`flake8`) 
+ - Deploy (`AWS EC2 instance`)
 
 # Dependencies
 
@@ -188,6 +191,7 @@ pip install -r requirements.txt
 
 Program Start
 ```
+cd src
 python main.py
 ```
 
