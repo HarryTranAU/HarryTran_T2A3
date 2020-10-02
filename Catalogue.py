@@ -3,12 +3,15 @@ from Deal import Deal
 
 
 class Catalogue:
+    """ Class that represents a group of deals. """
     deals = []
 
     def extract_deals(self, page: str) -> None:
+        """ Turns a string object into the BeautifulSoup Data Structure """
         self.soup = BeautifulSoup(page, 'lxml')
 
     def populate_catalogue(self, threshold: int) -> None:
+        """ Fills a list where each element is a Deal(class) """
         raw_deals = self.soup.find_all(class_="node-ozbdeal")
         for deal in raw_deals:
             if deal.find(class_="expired"):

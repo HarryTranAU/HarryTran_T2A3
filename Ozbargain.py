@@ -1,8 +1,10 @@
 import requests
+
 from Catalogue import Catalogue
 
 
 class Ozbargain:
+    """ Class representing the scraper function for specifically Ozbargain. """
     url = "https://www.ozbargain.com.au/"
 
     @classmethod
@@ -12,6 +14,7 @@ class Ozbargain:
 
     @staticmethod
     def frontpage(threshold) -> None:
+        """ Function will scrape -> populate_catalogue -> print to terminal """
         ozb_catalog = Catalogue()
         ozb_catalog.extract_deals(Ozbargain.scrape())
         ozb_catalog.populate_catalogue(threshold)

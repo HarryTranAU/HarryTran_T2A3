@@ -1,5 +1,6 @@
 from dhooks_lite import Webhook, Embed, Field
 import re
+from time import sleep
 
 
 class BotDiscord:
@@ -17,7 +18,7 @@ class BotDiscord:
         cls.url = url
 
     @classmethod
-    def validate_url(cls, url: str) -> None:
+    def validate_url(cls, url: str) -> bool:
         match = re.match(cls.URL_REGEX, url)
         if match is None:
             print("Invalid webhook URL provided. Go to README.md "
@@ -28,6 +29,7 @@ class BotDiscord:
 
     @classmethod
     def send_deals(cls, deals: list) -> None:
+        """ This function sends the Deals to the Discord webhook. """
         hook = Webhook(cls.url)
         for deal in deals:
             e1 = Embed(
@@ -44,3 +46,4 @@ class BotDiscord:
                 username="Ozbargain",
                 embeds=[e1]
             )
+            sleep(0.2)

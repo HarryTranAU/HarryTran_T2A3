@@ -2,6 +2,7 @@ import json
 
 
 class Data:
+    """ Class handling saving and loading data from local storage """
     file_path = "config.json"
     threshold = 0
 

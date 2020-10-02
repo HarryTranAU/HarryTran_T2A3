@@ -1,4 +1,5 @@
 class Deal:
+    """ Class representing each individual deal """
     def __init__(self,
                  title: str,
                  link: str,

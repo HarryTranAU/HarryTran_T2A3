@@ -33,7 +33,7 @@ The program will take input from the user to determine an upvote threshold (defa
 
 Discord's builtin Webhooks function as an easy way to get automated messages and data updates sent to a text channel in a server. The program will interact with the webhook through the `dhooks-lite` python module.
 
-`Terminal: Output`
+**`Terminal: Output`**
 
 The program will output the deals to the terminal. An example is shown in the screenshots section.
 
@@ -74,6 +74,10 @@ JSON module used for saving and loading data.
 **RE**
 
 Regex used to validate the webhook url
+
+**Time**
+
+`Sleep()` function is used to space requests to prevent flooding api with requests too quickly.
 
 **dhooks-lite**
 
