@@ -11,7 +11,7 @@ class Catalogue:
         """ Turns a string object into the BeautifulSoup Data Structure """
         self.soup = BeautifulSoup(page, 'lxml')
 
-    def populate_catalogue(self, threshold: int) -> None:
+    def populate_catalogue(self, threshold: int) -> list:
         """ Fills a list where each element is a Deal(class) """
         raw_deals = self.soup.find_all(class_="node-ozbdeal")
         self.deals = []

@@ -14,7 +14,7 @@ class Ozbargain:
         return cls.source
 
     @staticmethod
-    def frontpage(threshold) -> None:
+    def frontpage(threshold) -> list:
         """ Function will scrape -> populate_catalogue -> print to terminal """
         ozb_catalog = Catalogue()
         ozb_response = Ozbargain.scrape()
