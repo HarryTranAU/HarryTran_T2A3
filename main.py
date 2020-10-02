@@ -24,6 +24,7 @@ load_config = config_file.load()
 config_file.threshold = load_config["threshold"]
 BotDiscord.url = load_config["discord_hook"]
 save_config = load_config
+ozb_page = Ozbargain()
 
 print("Welcome!")
 user_input = input(main_menu)
@@ -63,7 +64,7 @@ def display_options() -> None:
 
 while user_input != "9":
     if user_input == "1":
-        Ozbargain.frontpage(config_file.threshold)
+        ozb_page.frontpage(save_config["threshold"])
         to_discord = input("Would you like to send this to discord? (yes/no)")
         if to_discord == "yes":
             if BotDiscord.url == "":
