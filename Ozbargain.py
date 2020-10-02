@@ -20,14 +20,16 @@ class Ozbargain:
         ozb_response = Ozbargain.scrape()
         if ozb_response.status_code == 200:
             ozb_catalog.extract_deals(Ozbargain.scrape().text)
-            ozb_catalog.populate_catalogue(threshold)
+            current_deals = ozb_catalog.populate_catalogue(threshold)
             print("\n\n")
-            if len(ozb_catalog.deals) == 0:
+            if len(current_deals) == 0:
                 print("No Deals meet the threshold. "
                       "Please lower the Upvote threshold in Options")
-            for deal in ozb_catalog.deals:
+            for deal in current_deals:
                 deal.print_deal()
                 print("*************************\n")
+            return current_deals
         else:
             print(f"Status code {ozb_response.status_code}: "
                   "Website might be down. Please try again later")
+            return []

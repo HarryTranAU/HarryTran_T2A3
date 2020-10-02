@@ -28,3 +28,4 @@ class Catalogue:
 
             temp_deal = Deal(title, link, upvote, downvote)
             self.deals.append(temp_deal)
+        return self.deals

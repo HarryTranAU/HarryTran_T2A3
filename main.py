@@ -1,5 +1,4 @@
 from Ozbargain import Ozbargain
-from Catalogue import Catalogue
 from Data import Data
 from Bot import BotDiscord
 
@@ -64,13 +63,15 @@ def display_options() -> None:
 
 while user_input != "9":
     if user_input == "1":
-        ozb_page.frontpage(save_config["threshold"])
-        to_discord = input("Would you like to send this to discord? (yes/no)")
-        if to_discord == "yes":
-            if BotDiscord.url == "":
-                print("Please setup Discord webhooks in Options first.")
-            else:
-                BotDiscord.send_deals(Catalogue.deals)
+        current_deals = ozb_page.frontpage(save_config["threshold"])
+        if current_deals:
+            to_discord = input("Would you like to send this to discord?"
+                               " (yes/no)")
+            if to_discord == "yes":
+                if BotDiscord.url == "":
+                    print("Please setup Discord webhooks in Options first.")
+                else:
+                    BotDiscord.send_deals(current_deals)
 
     elif user_input == "8":
         display_options()
