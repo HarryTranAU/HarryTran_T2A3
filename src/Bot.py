@@ -1,4 +1,4 @@
-from dhooks_lite import Webhook, Embed, Field # type: ignore
+from dhooks_lite import Webhook, Embed, Field  # type: ignore
 import re
 from time import sleep
 
